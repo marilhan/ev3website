@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dette er en test.</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+	<p id="tekstfelt">OK</p>
+
+	<script type="text/javascript">
+		var myvar = setInterval(function(){tekstfelt.innerHTML = loadFile("info.txt");console.log(".");}, 1000)
+		function loadFile(filePath) {
+			var result = null;
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("GET", filePath, false);
+			xmlhttp.send();
+			if (xmlhttp.status==200) {
+		    result = xmlhttp.responseText;
+			}
+			return result;
+		}
+
+		document.getElementById("tekstfelt");
+
+		function updateText() {
+			tekstfelt.innerHTML = loadFile("info.txt");console.log(".");
+		}
+	</script>
+
+</body>
+</html>
