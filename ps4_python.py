@@ -63,7 +63,7 @@ while event:
         if code == 0:
             left = scale(value, (0, 255), (40, -40))
         if code == 4:  # Righ stick vertical
-            forward = scale(value, (0, 255), (100, -100))
+            forward = scale(value, (255, 0), (100, -100))
 
     # Set motor voltages.
     left_motor.dc(forward)
