@@ -12,10 +12,10 @@
 	<div id="main">
 
 		<p id="tekstfelt">OK lol</p>
-		<p id="tekstfelt2">OK2</p>
 		<div style="position: relative; left: 0; top: 0;">
 			<img src="speedometer.png" id="speedometer" class="speedom">
 			<img src="nystrek.png" id="strek" class="speedline">
+			<img src="reverseImg.jpg" id="reverse" class="reverseImg"
   	</div>
 
 	</div>
@@ -23,8 +23,7 @@
 
 
 	<script type="text/javascript">
-		var myvar = setInterval(function(){tekstfelt.innerHTML = "fart: " + loadFile("vinfo.txt");tekstfelt2.innerHTML = "styring: " + loadFile("sinfo.txt");console.log(".");}, 500)
-
+		var myvar = setInterval(function(){tekstfelt.innerHTML = loadFile("info.txt");console.log(".");}, 1000)
 		function loadFile(filePath) {
 			var result = null;
 			var xmlhttp = new XMLHttpRequest();
@@ -38,6 +37,21 @@
 
 		document.getElementById("tekstfelt");
 
+		function updateSpeedometer(){
+			var roboSpeed = loadFile("vinfo.txt");//-45deg to 226deg
+			roboSpeedDeg = 2.71*abs(roboSpeed);
+			if(roboSpeed>=0){
+				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+")";
+				document.getElementById("reverseImg").style.transform = "visibility: hidden";
+			}
+			else {
+				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+")";
+				document.getElementById("reverseImg").style.transform = "visibility: visible";
+			}
+		}
+		function updateText() {
+			tekstfelt.innerHTML = loadFile("info.txt");console.log(".");
+		}
 	</script>
 
 </body>
