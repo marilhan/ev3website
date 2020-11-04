@@ -15,15 +15,16 @@ transport.connect(None,username,password)
 sftp = paramiko.SFTPClient.from_transport(transport)
 
 # Upload
-filepath_s = "/upload/website/sinfo.txt"
-localpath_s = "sinfo.txt"
-filePath_v = "/upload/website/vinfo.txt"
-localpath_v = "vinfo.txt"
+while True:
+	filepath_s = "/upload/website/sinfo.txt"
+	localpath_s = "/home/robot/website_info/sinfo.txt"
+	filePath_v = "/upload/website/vinfo.txt"
+	localpath_v = "/home/upload/website_info/vinfo.txt"
 
 
-sftp.put(localpath_s, filepath_s)
-sftp.put(localpath_v, filepath_v)
-sleep(0.5)
+	sftp.put(localpath_s, filepath_s)
+	sftp.put(localpath_v, filepath_v)
+	sleep(0.5)
 
 
 # Close
