@@ -21,3 +21,30 @@ body {
 	padding: 20px;
 	border: solid black 1px;
 }
+.speedom
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+.speedline
+    {
+      position: absolute;
+      top: 250px;
+      left: 48px;
+			width: 210px;
+			transform-origin:right;
+			transform: rotate(100deg)
+    }
+@-moz-keyframes spin {
+		    from { -moz-transform: rotate(0deg); }
+		    to { -moz-transform: rotate(360deg); }
+		}
+@-webkit-keyframes spin {
+		    from { -webkit-transform: rotate(0deg); }
+		    to { -webkit-transform: rotate(360deg); }
+		}
+@keyframes spin {
+		    from {transform:rotate(0deg);}
+		    to {transform:rotate(360deg);}
+		}
