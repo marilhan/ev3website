@@ -39,7 +39,7 @@
 	      left: 48px;
 				width: 210px;
 				transform-origin:right;
-				transform: rotate(226deg)
+				transform: rotate(226deg);
 	    }
 	.reverseImg{
 				position: absolute;
@@ -70,7 +70,11 @@
 
 
 	<script type="text/javascript">
-		var myvar = setInterval(function(){tekstfelt.innerHTML = loadFile("info.txt");console.log(".");}, 1000)
+	window.onload = updateSpeedometer();
+		var myvar = setInterval(function(){
+			tekstfelt.innerHTML = loadFile("info.txt");console.log(".");
+			updateSpeedometer();
+			}, 1000);
 		function loadFile(filePath) {
 			var result = null;
 			var xmlhttp = new XMLHttpRequest();
@@ -88,11 +92,11 @@
 			var roboSpeed = loadFile("vinfo.txt");//-45deg to 226deg
 			roboSpeedDeg = 2.71*abs(roboSpeed);
 			if(roboSpeed>=0){
-				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+")";
+				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+"deg)";
 				document.getElementById("reverseImg").style.transform = "visibility: hidden";
 			}
 			else {
-				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+")";
+				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+"deg)";
 				document.getElementById("reverseImg").style.transform = "visibility: visible";
 			}
 		}
