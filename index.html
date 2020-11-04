@@ -2,7 +2,54 @@
 <html>
 <head>
 	<title>Dette er en test.</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style>
+	body {
+		background-color: gray;
+	}
+
+	#header {
+		background-color: white;
+		float: left;
+		width: 100%;
+		height: 15%;
+		position: fixed;
+		margin: -20px -10px -10px -10px;
+		text-align: center;
+	}
+
+	#main {
+		float: left;
+		width: 90%;
+		height: 90%;
+		margin: auto;
+		margin-top: 9%;
+		padding: 20px;
+		border: solid black 1px;
+	}
+	.speedom
+	    {
+	      position: relative;
+	      top: 0;
+	      left: 0;
+	    }
+	.speedline
+	    {
+	      position: absolute;
+	      top: 250px;
+	      left: 48px;
+				width: 210px;
+				transform-origin:right;
+				transform: rotate(226deg)
+	    }
+	.reverseImg{
+				position: absolute;
+				top: 350px;
+				left: 230px;
+				width: 45px;
+				visibility: hidden;
+			}
+
+	</style>
 </head>
 <body>
 	<div id="header">
