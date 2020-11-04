@@ -65,6 +65,14 @@ while event:
         if code == 4:  # Righ stick vertical
             forward = scale(value, (255, 0), (100, -100))
 
+    File_object_v = open("vinfo.txt", "w")
+    File_object_s = open("sinfo.txt", "w")
+    File_object_s.write(left)
+    File_object_v.write(forward)
+    File_object_v.close()
+    File_object_s.close()
+    print("Written")
+
     # Set motor voltages.
     left_motor.dc(forward)
     right_motor.dc(forward)

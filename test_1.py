@@ -1,5 +1,6 @@
 import paramiko
 from time import sleep
+
 paramiko.util.log_to_file("paramiko.log")
 
 # Open a transport
@@ -14,21 +15,15 @@ transport.connect(None,username,password)
 sftp = paramiko.SFTPClient.from_transport(transport)
 
 # Upload
-filepath = "/upload/website/info.txt"
-localpath = "info.txt"
+filepath_s = "/upload/website/sinfo.txt"
+localpath_s = "sinfo.txt"
+filePath_v = "/upload/website/vinfo.txt"
+localpath_v = "vinfo.txt"
 
 
-a = 0
-while True:
-	File_object = open("info.txt", "w+")
-	File_object.write(str(a) + '\n')
-	File_object.close()
-	print("Written")
-	a = a + 1
-
-	sftp.put(localpath, filepath)
-	print("written2")
-	sleep(1)
+sftp.put(localpath_s, filepath_s)
+sftp.put(localpath_v, filepath_v)
+sleep(0.5)
 
 
 # Close

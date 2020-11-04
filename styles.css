@@ -34,7 +34,7 @@ body {
       left: 48px;
 			width: 210px;
 			transform-origin:right;
-			transform: rotate(100deg)
+			transform: rotate(-45deg)
     }
 @-moz-keyframes spin {
 		    from { -moz-transform: rotate(0deg); }
