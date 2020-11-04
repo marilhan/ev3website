@@ -34,7 +34,11 @@ body {
       left: 48px;
 			width: 210px;
 			transform-origin:right;
+<<<<<<< HEAD
+			transform: rotate(50deg)
+=======
 			transform: rotate(-45deg)
+>>>>>>> bc292df580e3abeb54978c09f821c86391e11e29
     }
 @-moz-keyframes spin {
 		    from { -moz-transform: rotate(0deg); }
