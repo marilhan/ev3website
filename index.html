@@ -23,6 +23,7 @@
 
 	<script type="text/javascript">
 		var myvar = setInterval(function(){tekstfelt.innerHTML = loadFile("info.txt");console.log(".");}, 1000)
+
 		function loadFile(filePath) {
 			var result = null;
 			var xmlhttp = new XMLHttpRequest();
@@ -37,7 +38,7 @@
 		document.getElementById("tekstfelt");
 
 		function updateText() {
-			tekstfelt.innerHTML = loadFile("info.txt");console.log(".");
+			tekstfelt.innerHTML = loadFile("infov.txt");console.log(".");
 		}
 	</script>
 
