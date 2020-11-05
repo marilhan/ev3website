@@ -18,7 +18,7 @@ sftp = paramiko.SFTPClient.from_transport(transport)
 while True:
 	filepath_s = "/upload/website/sinfo.txt"
 	localpath_s = "/home/robot/website_info/sinfo.txt"
-	filePath_v = "/upload/website/vinfo.txt"
+	filepath_v = "/upload/website/vinfo.txt"
 	localpath_v = "/home/upload/website_info/vinfo.txt"
 
 
