@@ -74,8 +74,9 @@
 	<script type="text/javascript">
 		var tekstfelt = document.getElementById("tekstfelt");
 		var v = 0;
+		var s = 0;
 
-		var myvar = setInterval(function(){v = loadFile("vinfo.txt");console.log(v); tekstfelt.innerHTML = "Farten er: " + v; updateSpeedometer()},1000);
+		var myvar = setInterval(function(){v = loadFile("vinfo.txt");console.log(v);s = loadFile("sinfo.txt");console.log(s);tekstfelt.innerHTML = "Farten er: " + v;tekstfelt1.innerHTML = "Svingen er: " + s;updateSpeedometer()},1000);
 
 		function loadFile(filePath) {
 			var result = null;
