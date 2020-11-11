@@ -11,10 +11,11 @@
 		background-color: white;
 		float: left;
 		width: 100%;
-		height: 15%;
+		height: 10vw;
 		position: fixed;
 		margin: -20px -10px -10px -10px;
 		text-align: center;
+		vertical-align: middle;
 	}
 
 	#main {
@@ -26,8 +27,13 @@
 		padding: 20px;
 		border: solid black 1px;
 	}
+	#divOverskrift{
+		position: relative;
+		vertical-align: middle;
+	}
 	#overskrift {
 		font-size: 4vw;
+		top: 200px;
 	}
 	.speedom
 	    {
@@ -65,7 +71,9 @@
 
 <body>
 	<div id="header">
-		<h1 id="overskrift">Lego-roboten sin reise</h1>
+		<div id="divOverskrift">
+			<h1 id="overskrift">Lego-roboten sin reise</h1>
+		</div>
 	</div>
 
 	<div id="main">
