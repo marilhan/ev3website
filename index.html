@@ -137,7 +137,7 @@ body {
 			console.log(roboSpeedDeg + " robospeedDeg");
 			console.log(document.getElementById("nystrek").style.transform);
 
-			if(roboSpeed>=0){
+			if(roboSpeed<=0){
 				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+"deg)";
 				document.getElementById("reverseImg").style.visibility = "hidden";
 			}
