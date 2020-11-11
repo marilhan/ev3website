@@ -67,6 +67,7 @@
 	<div id="main">
 
 		<p id="tekstfelt">OK lol lol</p>
+		<p id="tekstfelt1">OK</p>
 
 		<div style="position: relative; left: 0; top: 0;">
 			<img src="speedometer.png" id="speedometer" class="speedom">
@@ -81,10 +82,19 @@
 
 	<script type="text/javascript">
 		var tekstfelt = document.getElementById("tekstfelt");
+		var tekstfelt1 = document.getElementById("tekstfelt1");
 		var v = 0;
 		var s = 0;
 
-		var myvar = setInterval(function(){v = loadFile("vinfo.txt");console.log(v);s = loadFile("sinfo.txt");console.log(s);tekstfelt.innerHTML = "Farten er: " + v;tekstfelt1.innerHTML = "Svingen er: " + s;updateSpeedometer()},1000);
+		var myvar = setInterval(function(){v = loadFile("vinfo.txt");
+		console.log(v);
+		s = loadFile("sinfo.txt");
+		v = loadFile("vinfo.txt");
+		console.log(s);
+		tekstfelt.innerHTML = "Farten er: " + v;
+		tekstfelt1.innerHTML = "Svingen er: " + s;
+		updateSpeedometer()},
+		1000);
 
 		function loadFile(filePath) {
 			var result = null;
