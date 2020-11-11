@@ -15,7 +15,7 @@ body {
 }
 
 	#header {
-		background-color: darkgrey;
+		background-color: rgb(250, 50, 50, 0.8);
 		float: left;
 		width: 100%;
 		height: 8vw;
@@ -54,21 +54,23 @@ body {
 	      left: 3.5%;
 				width: 16.5%;
 				transform-origin:right;
-				transform: rotate(226deg)
+				transform: rotate(226deg);
+				transition: all 1s ease-in-out;
 	    }
 	.reverseImg{
 				position: absolute;
-				top: 350px;
-				left: 230px;
-				width: 45px;
+				top: 70%;
+				left: 19%;;
+				width: 3%;
 				visibility: hidden;
 			}
-	.pilImg{
+	.rattImg{
 		float: right;
 		position: absolute;
-		width: 10%;
-		right: 20%;
-		top: 20%;
+		width: 40%;
+		right: 0%;
+		top: 0%;
+		transition: all 1s ease-in-out;
 	}
 
 	</style>
@@ -90,7 +92,7 @@ body {
 			<img src="speedometer.png" id="speedometer" class="speedom">
 			<img src="nystrek.png" id="nystrek" class="speedline">
 			<img src="reverseImg.jpg" id="reverseImg" class="reverseImg">
-			<img src="pil.png" id="pil" class="pilImg"
+			<img src="ratt.png" id="ratt" class="rattImg"
   	</div>
 
 	</div>
@@ -127,20 +129,22 @@ body {
 
 		function updateSpeedometer(){
 			var roboSpeed = v;//-45deg to 226deg
+			var steering = s;
 			roboSpeedDeg = 2.71*Math.abs(roboSpeed) - 45;
+			steeringDeg = 0.9*steering;
+			document.getElementById("ratt").style.transform = "rotate("+steeringDeg+"deg)";
 			console.log(roboSpeed + " robospeed");
 			console.log(roboSpeedDeg + " robospeedDeg");
 			console.log(document.getElementById("nystrek").style.transform);
 
 			if(roboSpeed>=0){
 				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+"deg)";
-				document.getElementById("reverseImg").style.transform = "visibility: hidden";
+				document.getElementById("reverseImg").style.visibility = "hidden";
 			}
 			else {
 				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+"deg)";
-				document.getElementById("reverseImg").style.transform = "visibility: visible";
+				document.getElementById("reverseImg").style.visibility = "visible";
 			}
-
 		}
 
 
