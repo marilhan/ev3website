@@ -105,7 +105,12 @@ body {
 		var v = 0;
 		var s = 0;
 
-		var myvar = setInterval(function(){v = loadFile("vinfo.txt");s = loadFile("sinfo.txt");v = loadFile("vinfo.txt");;tekstfelt.innerHTML = "Farten er: " + v;tekstfelt1.innerHTML = "Svingen er: " + s;updateSpeedometer()},1000);
+		var myvar = setInterval(function(){v = loadFile("vinfo.txt");
+		s = loadFile("sinfo.txt");
+		v = loadFile("vinfo.txt");
+		tekstfelt.innerHTML = "Farten er: " + v;
+		tekstfelt1.innerHTML = "Svingen er: " + s;
+		updateSpeedometer()},1000);
 
 		function loadFile(filePath) {
 			var result = null;
@@ -123,7 +128,7 @@ body {
 			var roboSpeed = v;//-45deg to 226deg
 			var steering = s;
 			roboSpeedDeg = 2.71*Math.abs(roboSpeed) - 45;
-			steeringDeg = 0.9*steering;
+			steeringDeg = 2.5*steering*-1;
 			document.getElementById("ratt").style.transform = "rotate("+steeringDeg+"deg)";
 			console.log(roboSpeed + " robospeed");
 			console.log(roboSpeedDeg + " robospeedDeg");
