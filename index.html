@@ -125,22 +125,21 @@ body {
 
 
 		function updateSpeedometer(){
-			var roboSpeed = v;//-45deg to 226deg
-			var steering = s;
-			roboSpeedDeg = 2.71*Math.abs(roboSpeed) - 45;
-			steeringDeg = 2.5*steering*-1;
-			document.getElementById("ratt").style.transform = "rotate("+steeringDeg+"deg)";
-			console.log(roboSpeed + " robospeed");
-			console.log(roboSpeedDeg + " robospeedDeg");
-			console.log(document.getElementById("nystrek").style.transform);
+			var roboSpeed = v; //henter variabelen v altså et tall mellom -100 og 100 og setter den lik roboSpeed.
+			var steering = s; // henter variabelen s (tall mellom -40 og 40) og setter dne lik steering.
+			roboSpeedDeg = 2.71*Math.abs(roboSpeed) - 45;//oversetter output fra roboten sin fart til å matche speedometeret og gir absolutt verdi av den nye verdien.
+			steeringDeg = 2.5*steering*-1;//Gjør om output fra styrings variabelen og gjør den om til hvor mange grader rattet skal rotere.
+			document.getElementById("ratt").style.transform = "rotate("+steeringDeg+"deg)";//roterer rattet tilsvarende steeringDeg grader.
+			console.log(roboSpeed + " robospeed");//log for hastighet
+			console.log(roboSpeedDeg + " robospeedDeg");//log for hastighet grader.
 
-			if(roboSpeed<=0){
-				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+"deg)";
-				document.getElementById("reverseImg").style.visibility = "hidden";
+			if(roboSpeed<=0){//når roboten kjører framover kjøres if-en
+				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+"deg)";//Svinger pekeren på speedometeret for å vise hvor fort roboten kjører.
+				document.getElementById("reverseImg").style.visibility = "hidden";//fjerner revers bildet fordi roboten kjører framover.
 			}
-			else {
-				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+"deg)";
-				document.getElementById("reverseImg").style.visibility = "visible";
+			else {//når roboten kjører bakover kjører else-en.
+				document.getElementById("nystrek").style.transform = "rotate("+roboSpeedDeg+"deg)";//Svinger pekeren på speedometeret for å vise hvor fort roboten kjører.
+				document.getElementById("reverseImg").style.visibility = "visible";//får revers bildet til å vises igjen fordi roboten kjører bakover.
 			}
 		}
 
