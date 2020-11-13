@@ -85,9 +85,6 @@ body {
 
 	<div id="main">
 
-		<p id="tekstfelt">OK lol lol</p>
-		<p id="tekstfelt1">OK</p>
-
 		<div style="position: relative; left: 0; top: 0;">
 			<img src="speedometer.png" id="speedometer" class="speedom">
 			<img src="nystrek.png" id="nystrek" class="speedline">
@@ -100,18 +97,17 @@ body {
 
 
 	<script type="text/javascript">
-		var tekstfelt = document.getElementById("tekstfelt");
-		var tekstfelt1 = document.getElementById("tekstfelt1");
+	// Definer verdiene for fart (velocity) og styring
 		var v = 0;
 		var s = 0;
 
+//Definerer et interval der JS leser tekstfilene og oppdaterer verdien til variablene s og v.
 		var myvar = setInterval(function(){
 		s = loadFile("sinfo.txt");
 		v = loadFile("vinfo.txt");
-		tekstfelt.innerHTML = "Farten er: " + v;
-		tekstfelt1.innerHTML = "Svingen er: " + s;
 		updateSpeedometer()},1000);
 
+//Funksjonen som leser .txt-filer fra samme mappe som HTML-fila
 		function loadFile(filePath) {
 			var result = null;
 			var xmlhttp = new XMLHttpRequest();
